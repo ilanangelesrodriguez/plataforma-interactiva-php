@@ -115,6 +115,16 @@
 
 .calculadora__main {
     margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calculadora__main-p{
+    color: black;
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
 }
 
 .calculadora__nav {
@@ -143,6 +153,21 @@
     flex-grow: 1;
     cursor: pointer;
     font-weight: 500;
+}
+
+.calculadora__result {
+    padding: 1em 2em;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+    color: black;
+}
+
+.calculadora__result-title {
+    color: black;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
 }
 
 .indicator {
@@ -238,6 +263,14 @@
     display: none;
 }
 
+.main__content-login {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+}
+
 .main__h1 {
     color: black;
 }
@@ -284,11 +317,11 @@
     border: 2px solid black;
     box-shadow: 4px 4px black;
     width: 30vw;
-    margin: auto;
 }
 
 .signin {
     background: #02B7A6;
+    margin:auto;
 }
 
 .login__button {
@@ -349,7 +382,75 @@
 }
 
 
+.login__popup {
+    display: flex;
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    margin-top: 10px;
+}
 
+
+
+.test__account {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+.test__account .test__account-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 220px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    background-color: lightseagreen;
+    box-shadow: 4px 4px black;
+    border: 2px solid black;
+}
+
+.test__account-title, .test__account-content {
+    margin: 0;
+}
+
+.test__account-title {
+    font-size: medium;
+    font-weight: bold;
+    color: #111111;
+}
+
+.test__account-content {
+    font-size: small;
+}
+
+.test__account-content span {
+    font-weight: bold;
+    color: #111111;
+}
+
+.test__account .test__account-card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.test__account:hover > .test__account-card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
+
+
+.resultado__division-fail {
+    color: darkred;
+}
 
 
 
