@@ -454,6 +454,68 @@
 
 
 
+
+.card__registro-header {
+    padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.card__registro-image {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e2feee;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    animation: animate .6s linear alternate-reverse infinite;
+    transition: .6s ease;
+}
+
+.card__registro-image svg {
+    color: #0afa2a;
+    width: 2rem;
+    height: 2rem;
+}
+
+.card__registro-content {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.card__registro-title {
+    color: #066e29;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.registro-fallido {
+    color: darkred;
+}
+
+.card__registro-message {
+    margin-top: 0.5rem;
+    color: #595b5f;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+
+@keyframes animate {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+}
+
+
+
 @media (max-width: 800px) {
     .footer__div{
         gap: 0;

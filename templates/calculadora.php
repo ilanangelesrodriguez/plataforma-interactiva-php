@@ -14,7 +14,7 @@
         </div>
 
         <div class="calculadora__main">
-            <?php include './imageMath.php' ?>
+            <?php include '../templates/imageMath.php' ?>
             <p class="calculadora__main-p">
                 Elige la operación a realizar.
             </p>

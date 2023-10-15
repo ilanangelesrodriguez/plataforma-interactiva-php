@@ -16,3 +16,10 @@
         © Desarrollado por Ilan Néstor Angeles Rodriguez. Todos Los Derechos Reservados, 2023.
     </div>
 </footer>
+
+<script src="../public/js/strategy.js"></script>
+<script src="../public/js/calculatorScript.js"></script>
+
+</body>
+</html>
+
