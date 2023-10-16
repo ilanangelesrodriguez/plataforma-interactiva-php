@@ -2,10 +2,8 @@
 
 namespace Model;
 
-use Model\LoginModel;
-
 interface EstadoUsuario
 {
-    public function verificarCredenciales(LoginModel $modelo, $usuario, $clave);
-    public function obtenerMensaje();
+    public function verificarCredenciales($usuario, $clave);
+
 }

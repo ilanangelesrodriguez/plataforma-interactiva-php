@@ -2,21 +2,11 @@
 
 namespace Model;
 
-use Model\EstadoUsuario;
-use Model\LoginModel;
-
 class UsuarioBloqueado implements EstadoUsuario
 {
-
-    public function verificarCredenciales(LoginModel $modelo, $usuario, $clave)
+    public function verificarCredenciales($usuario, $clave)
     {
-        // TODO: Implement verificarCredenciales() method.
+        // Usuario bloqueado, no se permiten intentos de inicio de sesión
         return false;
-    }
-
-    public function obtenerMensaje()
-    {
-        // TODO: Implement obtenerMensaje() method.
-        return 'Cuenta bloqueada. Demasiados intentos fallidos.';
     }
 }

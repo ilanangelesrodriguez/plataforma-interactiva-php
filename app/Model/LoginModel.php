@@ -2,42 +2,32 @@
 
 namespace Model;
 
-use Model\UsuarioActivo;
-use Model\UsuarioModel;
-
 class LoginModel
 {
     private $usuarios;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->inicializarUsuarios();
     }
 
-    public function inicializarUsuarios() {
-        // Inicializar usuarios con nombres y contraseñas
-        $this->usuarios['usuario1'] = new UsuarioModel('usuario1', 'clave1', new UsuarioActivo());
-        $this->usuarios['usuario2'] = new UsuarioModel('usuario2', 'clave2', new UsuarioActivo());
-        $this->usuarios['usuario3'] = new UsuarioModel('usuario3', 'clave3', new UsuarioActivo());
+    private function inicializarUsuarios()
+    {
+        // Inicializar usuarios como instancias de la clase Usuario
+        $this->usuarios['usuario1'] = UsuarioModel::crearUsuario('usuario1', 'clave1');
+        $this->usuarios['usuario2'] = UsuarioModel::crearUsuario('usuario2', 'clave2');
+        $this->usuarios['usuario3'] = UsuarioModel::crearUsuario('usuario3', 'clave3');
     }
 
-    // En el modelo (modelos/Modelo.php)
-    public function getUsuario($usuario) {
-        return isset($this->usuarios[$usuario]) ? $this->usuarios[$usuario] : null;
+    public function verificarCredenciales($usuario, $clave)
+    {
+        // Verificar credenciales llamando al método en Usuario
+        return isset($this->usuarios[$usuario]) && $this->usuarios[$usuario]->verificarCredenciales($clave);
     }
 
-    public function verificarCredenciales($usuario, $clave) {
-        return $this->usuarios[$usuario]->getEstado()->verificarCredenciales($this, $usuario, $clave);
-    }
-
-    public function incrementarIntentosFallidos($usuario) {
-        $this->usuarios[$usuario]->getEstado()->incrementarIntentosFallidos($this, $usuario);
-    }
-
-    public function resetearIntentosFallidos($usuario) {
-        $this->usuarios[$usuario]->getEstado()->resetearIntentosFallidos($this, $usuario);
-    }
-
-    public function obtenerIntentosFallidos($usuario) {
-        return $this->usuarios[$usuario]->getEstado()->obtenerIntentosFallidos($this, $usuario);
+    public function getUsuario($nombre)
+    {
+        return isset($this->usuarios[$nombre]) ? $this->usuarios[$nombre] : null;
     }
 }
+

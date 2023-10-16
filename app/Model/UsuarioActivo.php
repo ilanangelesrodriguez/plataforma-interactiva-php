@@ -2,29 +2,23 @@
 
 namespace Model;
 
-use Model\LoginModel;
-use Model\EstadoUsuario;
-
 class UsuarioActivo implements EstadoUsuario
 {
+    private $usuario;
 
-    public function verificarCredenciales(LoginModel $modelo, $usuario, $clave)
+    public function __construct(UsuarioModel $usuario)
     {
-        // TODO: Implement verificarCredenciales() method.
-        if ($modelo->verificarCredenciales($usuario, $clave)) {
-            // Restablecer el contador si las credenciales son correctas
-            $modelo->resetearIntentosFallidos($usuario);
-            return true;
-        } else {
-            // Incrementar el contador de intentos fallidos
-            $modelo->incrementarIntentosFallidos($usuario);
-            return false;
-        }
+        $this->usuario = $usuario;
     }
 
-    public function obtenerMensaje()
+    public function verificarCredenciales($usuario, $clave)
     {
-        // TODO: Implement obtenerMensaje() method.
-        return '';
+        if ($this->usuario->getNombre() === $usuario && $this->usuario->verificarCredenciales($clave)) {
+            $this->usuario->resetIntentosFallidos();
+            return true;
+        } else {
+            $this->usuario->incrementarIntentosFallidos();
+            return false;
+        }
     }
 }
