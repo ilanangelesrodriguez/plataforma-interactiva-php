@@ -43,7 +43,7 @@ include '../templates/header.php';
             <div class="login__title">Gestor de tareas</div>
 
             <label for="description">Nueva tarea:</label>
-            <input class="login__input" type="text" id="description" name="description" required>
+            <input class="login__input" type="text" id="description" name="description">
             <button class="login__button" type="submit">Agregar tarea</button>
             <?php
 

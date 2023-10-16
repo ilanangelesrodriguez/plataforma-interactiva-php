@@ -1,21 +1,25 @@
 <?php
 
-// test.php
+require_once '../Model/LoginModel.php';
+require_once '../Controller/LoginController.php';
 
-// Incluir el archivo de autoloader (si utilizas autoloading de clases)
-// require_once 'path_to_autoloader.php';
+use Model\LoginModel;
+use Controller\LoginController;
 
-// Incluir el controlador de carrito
-require_once '../Controller/CarritoController.php';
+$loginModel = new LoginModel();
 
-// Crear una instancia del controlador de carrito
-$carritoController = new Controller\CarritoController();
+$action = isset($_GET['action']) ? $_GET['action'] : 'mostrarFormulario';
 
-// Manejar la solicitud
-$carritoController->handleRequest();
+$controller = new LoginController();
 
-
-?>
-
-
+// Realizar enrutamiento
+if ($action === 'mostrarFormulario') {
+    $controller->mostrarFormulario();
+} elseif ($action === 'procesarFormulario') {
+    $controller->procesarFormulario();
+} elseif ($action === 'cerrarSesion') {
+    $controller->cerrarSesion();
+} else {
+    echo "Acción no válida";
+}
 
