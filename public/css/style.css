@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+.background {
+    background: linear-gradient(90deg, #02B7A6, #474749, #111111);
+    background-size: 300% 300%;
+    animation: gradient 4s alternate infinite;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 100%;
+    }
+}
+
+.body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+.calculadora {
+    display: flex;
+    justify-content: center;
+}
+
+.calculadora__button {
+    outline: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #40B3A2;
+    min-width: 200px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 16px 20px;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+}
+
+.calculadora__button:hover {
+    opacity: .95;
+}
+
+.calculadora__button .animation {
+    border-radius: 100%;
+    animation: ripple 0.6s linear infinite;
+}
+
+.calculadora__card {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    background: lightgrey;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+}
+
+.calculadora__card-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.calculadora__form {
+    display: none;
+}
+
+.calculadora__form-input {
+    height: 30px;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    background-color: #fff;
+    box-shadow: 4px 4px #323232;
+    font-size: 15px;
+    font-weight: 600;
+    color: #323232;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.calculadora__form-input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+.calculadora__form-input:focus {
+    border: 2px solid #2d8cf0;
+}
+
+.calculadora__label {
+    color: black;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-size: small;
+}
+
+.calculadora__main {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.calculadora__main-p{
+    color: black;
+    font-weight: bold;
+    font-size: small;
+    text-align: center;
+}
+
+.calculadora__nav {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 5px;
+    position: relative;
+    padding: 2px;
+    background-color: #ebebec;
+    border-radius: 9px;
+    margin: 10px 20px 10px 20px;
+}
+
+.calculadora__nav-item {
+    width: 7em;
+    height: 28px;
+    position: relative;
+    z-index: 99;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+    flex: none;
+    align-self: stretch;
+    flex-grow: 1;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.calculadora__result {
+    padding: 1em 2em;
+    border-radius: 5px;
+    border: 2px solid #323232;
+    box-shadow: 4px 4px #323232;
+    color: black;
+}
+
+.calculadora__result-title {
+    color: black;
+    text-align: center;
+    font-size: medium;
+    font-weight: bold;
+}
+
+.indicator {
+    height: 28px;
+    background: #FFFFFF;
+    z-index: 9;
+    border: 0.5px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.12), 0px 3px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 7px;
+    transition: all 0.2s ease-out;
+}
+
+.calculadora__title {
+    margin: 0;
+    font-size: 25px;
+    font-weight: 900;
+    text-align: center;
+    color: black;
+}
+
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    font-size: small;
+}
+
+.footer__div {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+}
+
+.footer__div-contact {
+    display: flex;
+    flex-direction: row;
+}
+
+.footer__div-a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer__div-p {
+    margin: 0;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+}
+
+.header__div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header__div-img {
+    height: 3em;
+}
+
+.header__div-course {
+    font-size: x-small;
+}
+
+.main {
+    margin: 3vh auto;
+    padding: 1rem;
+    background-color: #fff;
+    max-width: 80vw;
+    border-radius: 20px;
+    box-shadow: 10px 10px #323232;
+    border: 3px solid #323232;
+}
+
+.main__content {
+    display: none;
+}
+
+.main__content-login {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    align-items: center;
+}
+
+.main__h1 {
+    color: black;
+}
+
+.main__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+}
+
+.main__nav-a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    border-radius: 5%;
+    margin: 0 2px;
+    padding: 0 20px;
+    background-color: #333;
+    box-shadow: 0px 0px 4px #00000027;
+    transition: 0.3s;
+    text-decoration: none;
+    color: white;
+    font-size: small;
+}
+
+.main__nav-a:hover {
+    background-color: #f2f2f2;
+    box-shadow: 0px 0px 6px 3px #00000027;
+    color: black;
+}
+
+.login {
+    padding: 20px;
+    background: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 5px;
+    border: 2px solid black;
+    box-shadow: 4px 4px black;
+    width: 30vw;
+}
+
+.signin {
+    background: #02B7A6;
+    margin:auto;
+}
+
+.login__button {
+    margin: 20px auto 0 auto;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: beige;
+    box-shadow: 4px 4px black;
+    font-size: 17px;
+    font-weight: 600;
+    color: #323232;
+    cursor: pointer;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.login__button:active {
+    box-shadow: 0px 0px black;
+    transform: translate(3px, 3px);
+}
+
+.login__title {
+    color: #323232;
+    font-weight: 900;
+    font-size: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.login__title span {
+    color: #666;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.login__input {
+    width: 25vw;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid black;
+    background-color: beige;
+    box-shadow: 4px 4px black;
+    font-size: 15px;
+    font-weight: 600;
+    color: #323232;
+    padding: 5px 10px;
+    outline: none;
+}
+
+.login__input::placeholder {
+    color: #666;
+    opacity: 0.8;
+}
+
+.login__input:focus {
+    border: 2px solid #2d8cf0;
+}
+
+
+.login__popup {
+    display: flex;
+    background-color: #dff0d8;
+    color: #3c763d;
+    padding: 10px;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+
+
+.test__account {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+
+.test__account .test__account-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    height: 100px;
+    width: 220px;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    transition: 400ms;
+    background-color: lightseagreen;
+    box-shadow: 4px 4px black;
+    border: 2px solid black;
+}
+
+.test__account-title, .test__account-content {
+    margin: 0;
+}
+
+.test__account-title {
+    font-size: medium;
+    font-weight: bold;
+    color: #111111;
+}
+
+.test__account-content {
+    font-size: small;
+}
+
+.test__account-content span {
+    font-weight: bold;
+    color: #111111;
+}
+
+.test__account .test__account-card:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.test__account:hover > .test__account-card:not(:hover) {
+    filter: blur(10px);
+    transform: scale(0.9, 0.9);
+}
+
+
+.resultado__division-fail {
+    color: darkred;
+}
+
+
+
+
+.card__registro-header {
+    padding: 1.25rem 1rem 1rem 1rem;
+}
+
+.card__registro-image {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e2feee;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 9999px;
+    animation: animate .6s linear alternate-reverse infinite;
+    transition: .6s ease;
+}
+
+.card__registro-image svg {
+    color: #0afa2a;
+    width: 2rem;
+    height: 2rem;
+}
+
+.card__registro-content {
+    margin-top: 0.75rem;
+    text-align: center;
+}
+
+.card__registro-title {
+    color: #066e29;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+}
+
+.registro-fallido {
+    color: darkred;
+}
+
+.card__registro-message {
+    margin-top: 0.5rem;
+    color: #595b5f;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+
+@keyframes animate {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.09);
+    }
+}
+
+
+
+@media (max-width: 800px) {
+    .footer__div{
+        gap: 0;
+    }
+
+    .header__div-poo {
+        display: none;
+    }
+
+    .header__div-img {
+        height: 2.5em;
+    }
+
+    .login {
+        width: 70vw;
+    }
+
+    .login__input {
+        width: 50vw;
+    }
+
+    .main__nav-a {
+        font-size: x-small;
+        height: 40px;
+    }
+}
