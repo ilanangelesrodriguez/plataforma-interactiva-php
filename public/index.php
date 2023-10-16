@@ -1,4 +1,8 @@
 <?php
+
+use Controller\TaskController;
+use View\TaskView;
+
 include '../templates/header.php';
 ?>
 <main class="main">
@@ -35,23 +39,45 @@ include '../templates/header.php';
 
     <div id="ejercicio2" class="main__content">
 
-        <form class="gestor__tareas login">
-            <div class="login__title">Gestor de tareas<br><span>Introduce tus fichas :v para continuar</span></div>
-            <input required  class="login__input" name="email" placeholder="Correo Electrónico" type="email">
-            <input required class="login__input" name="password" placeholder="Contraseña" type="password">
-            <button class="login__button" type="submit">Iniciar Sesión →</button>
+        <form class="gestor__tareas login" method="post" action="">
+            <div class="login__title">Gestor de tareas</div>
+
+            <label for="description">Nueva tarea:</label>
+            <input class="login__input" type="text" id="description" name="description" required>
+            <button class="login__button" type="submit">Agregar tarea</button>
+            <?php
+
+            require_once '../app/Model/TaskModel.php';
+            require_once '../app/View/TaskView.php';
+            require_once '../app/Controller/TaskController.php';
+
+            $model = new TaskModel();
+            $view = new TaskView();
+            $controller = new TaskController($model, $view);
+
+            $controller->handleRequest();
+            ?>
         </form>
+
 
     </div>
 
     <div id="ejercicio3" class="main__content">
 
-        <form class="login">
-            <div class="login__title">Carrito de Compras<br><span>Introduce tus fichas :v para continuar</span></div>
-            <input required  class="login__input" name="email" placeholder="Correo Electrónico" type="email">
-            <input required class="login__input" name="password" placeholder="Contraseña" type="password">
-            <button class="login__button" type="submit">Iniciar Sesión →</button>
-        </form>
+        <div class="carritocompra">
+            <div class="carritocompra__title">Carrito de Compras</div>
+            <div class="carritocompra__subtitle">
+                <?php
+                require_once '../app/Controller/CarritoController.php';
+
+                // Crear una instancia del controlador de carrito
+                $carritoController = new Controller\CarritoController();
+
+
+                ?>
+            </div>
+        </div>
+
 
     </div>
 
