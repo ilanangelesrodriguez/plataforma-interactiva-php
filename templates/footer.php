@@ -19,7 +19,11 @@
 
 <script src="../public/js/strategy.js"></script>
 <script src="../public/js/calculatorScript.js"></script>
-
+<script>
+    function goBack() {
+        window.location.href = "index.php";
+    }
+</script>
 </body>
 </html>
 

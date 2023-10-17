@@ -1,14 +1,11 @@
 <?php
 
 require_once 'Model/UsuarioModel.php';
+require_once 'Model/UsuarioActivo.php';
+require_once 'Model/UsuarioBloqueado.php';
 require_once 'Model/LoginModel.php';
 require_once 'Controller/LoginController.php';
 require_once 'View/LoginView.php';
-// test.php
-require_once 'Model/EstadoUsuario.php';
-require_once 'Model/UsuarioActivo.php';
-// ... otras inclusiones ...
-
 
 use Model\LoginModel;
 use Controller\LoginController;
@@ -25,6 +22,7 @@ if ($action === 'mostrarFormulario') {
     $loginView->mostrarFormulario();
 } elseif ($action === 'procesarFormulario') {
     $loginController->procesarFormulario();
-} else {
-    echo "Acción no válida";
 }
+
+?>
+

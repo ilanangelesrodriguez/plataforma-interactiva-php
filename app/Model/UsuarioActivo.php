@@ -1,24 +1,31 @@
 <?php
 
 namespace Model;
+require_once 'EstadoUsuario.php'; // Asegúrate de que la ruta sea correcta
 
 class UsuarioActivo implements EstadoUsuario
 {
-    private $usuario;
-
-    public function __construct(UsuarioModel $usuario)
+    public function verificarCredenciales(UsuarioModel $usuario, $clave)
     {
-        $this->usuario = $usuario;
-    }
 
-    public function verificarCredenciales($usuario, $clave)
-    {
-        if ($this->usuario->getNombre() === $usuario && $this->usuario->verificarCredenciales($clave)) {
-            $this->usuario->resetIntentosFallidos();
+        if ($usuario->getNombre() === $usuario->getNombre() && password_verify($clave, $usuario->getClave())) {
+            $usuario->resetIntentosFallidos();
             return true;
         } else {
-            $this->usuario->incrementarIntentosFallidos();
+            $usuario->incrementarIntentosFallidos();
             return false;
         }
+
     }
+
+
+    public function manejarIntentosFallidos(UsuarioModel $usuario, $clave)
+    {
+        if (!$this->verificarCredenciales($usuario, $clave)) {
+            $usuario->incrementarIntentosFallidos();
+        } else {
+            $usuario->resetIntentosFallidos();
+        }
+    }
+
 }

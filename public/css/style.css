@@ -266,18 +266,25 @@
 
 .main__content {
     display: none;
+    justify-content: center;
 }
 
 .main__content-login {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 1em;
+    gap: 3em;
     align-items: center;
 }
 
 .main__h1 {
     color: black;
+}
+
+.main__login {
+    display: flex;
+    margin: auto;
+    justify-content: center;
 }
 
 .main__nav {
@@ -321,7 +328,12 @@
     border-radius: 5px;
     border: 2px solid black;
     box-shadow: 4px 4px black;
-    width: 30vw;
+    margin: auto;
+}
+
+.login__form {
+    display: flex;
+    flex-direction: column;
 }
 
 .signin {
@@ -397,6 +409,10 @@
     margin-top: 10px;
 }
 
+.login__response {
+    color: #323232;
+}
+
 
 
 .test__account {
@@ -457,7 +473,9 @@
     color: darkred;
 }
 
-
+.signout__button {
+    background-color: #db4937;
+}
 
 
 .card__registro-header {
