@@ -45,6 +45,6 @@ function mostrarContenido(idContenido) {
 
     // Mostrar el contenido específico
     let contenido = document.getElementById(idContenido);
-    contenido.style.display = 'block';
+    contenido.style.display = 'flex';
 }
 
