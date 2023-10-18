@@ -419,7 +419,12 @@
     text-align: center;
 }
 
-
+.registro__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    align-items: center;
+}
 
 .test__account {
     display: flex;
