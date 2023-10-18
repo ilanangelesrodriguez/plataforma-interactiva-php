@@ -1,6 +1,7 @@
 <?php
 
 use Controller\LoginController;
+use Controller\RegistroController;
 use Controller\TaskController;
 use Model\Login\LoginModel;
 use View\LoginView;
@@ -78,8 +79,6 @@ include '../templates/header.php';
 
         </div>
 
-
-
     </div>
 
 
@@ -94,17 +93,31 @@ include '../templates/header.php';
 
     <div id="ejercicio1" class="main__content">
 
-        <form class="signin login" action="../templates/respuesta-formulario.php" method="post">
-            <div class="login__title">Registro<br><span>Introduce tus datos para el registro</span></div>
-            <input required  class="login__input" name="name" placeholder="Nombres" type="text">
-            <input required class="login__input" name="lastname" placeholder="Apellidos" type="text">
-            <input required class="login__input" name="email" placeholder="Correo Electrónico" type="email">
-            <input required class="login__input" name="password1" placeholder="Contraseña" type="password">
-            <input required class="login__input" name="password2" placeholder="Contraseña" type="password">
-            <button class="login__button" type="submit">Registrar →</button>
+        <div class="signin login">
 
+            <?php
+            use View\RegistroView;
 
-        </form>
+            require_once '../app/Model/Login/Estado/UsuarioActivo.php';
+            require_once '../app/Model/Login/LoginModel.php';
+            require_once '../app/Controller/RegistroController.php';  // Asegúrate de ajustar la ruta según tu estructura de archivos
+            require_once '../app/View/RegistroView.php';
+
+            $registroController = new RegistroController();
+
+            // Verifica si se ha enviado el formulario (por ejemplo, a través de un botón "Submit")
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                $registroController->procesarRegistro();
+            } else {
+
+                $view = new RegistroView();
+                $view->mostrarFormulario();
+
+            }
+
+            ?>
+
+        </div>
 
     </div>
 

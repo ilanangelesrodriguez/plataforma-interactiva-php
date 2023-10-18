@@ -35,6 +35,23 @@ class LoginModel
 
     }
 
+    public function registrarUsuario($nombre, $usuario, $password)
+    {
+        // Verifica si el usuario ya existe
+        if ($this->usuarioExiste($usuario)) {
+            return false; // Usuario ya registrado
+        }
+
+        // Agrega el usuario si no está registrado
+        $this->usuarios[$usuario] = UsuarioModel::crearUsuario($nombre, $password);
+        return true;
+    }
+
+    private function usuarioExiste($usuario)
+    {
+        return isset($this->usuarios[$usuario]);
+    }
+
     public function getUsuario($nombre)
     {
         return isset($this->usuarios[$nombre]) ? $this->usuarios[$nombre] : null;

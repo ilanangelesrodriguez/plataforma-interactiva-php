@@ -23,6 +23,10 @@
     function goBack() {
         window.location.href = "index.php";
     }
+    function retroceder() {
+        history.back();
+    }
+
 </script>
 </body>
 </html>
