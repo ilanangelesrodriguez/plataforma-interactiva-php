@@ -1,7 +1,9 @@
 <?php
 
-namespace Model;
-require_once 'EstadoUsuario.php'; // Asegúrate de que la ruta sea correcta
+namespace Model\Login\Estado;
+use Model\Login\UsuarioModel;
+
+require_once 'EstadoUsuario.php';
 
 class UsuarioActivo implements EstadoUsuario
 {

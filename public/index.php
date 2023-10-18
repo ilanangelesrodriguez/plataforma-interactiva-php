@@ -1,6 +1,9 @@
 <?php
 
+use Controller\LoginController;
 use Controller\TaskController;
+use Model\Login\LoginModel;
+use View\LoginView;
 use View\TaskView;
 
 include '../templates/header.php';
@@ -14,7 +17,39 @@ include '../templates/header.php';
 
         <div class="main__content-login">
             <div class="login">
-                <?php include '../app/test.php' ?>
+
+                <?php
+                /**
+                 * Sección de inicio de sesión
+                 *
+                 * Este archivo actúa como el punto de entrada para la funcionalidad de inicio de sesión.
+                 * Incluye la inicialización de modelos, controladores y vistas necesarios, y realiza el enrutamiento
+                 * según la acción especificada en la URL.
+                 *
+                 * @author Ilan Nestor Angeles Rodriguez
+                 */
+                require_once '../app/Model/Login/UsuarioModel.php';
+                require_once '../app/Model/Login/Estado/UsuarioActivo.php';
+                require_once '../app/Model/Login/Estado/UsuarioBloqueado.php';
+                require_once '../app/Model/Login/LoginModel.php';
+                require_once '../app/Controller/LoginController.php';
+                require_once '../app/View/LoginView.php';
+
+
+                $loginModel = new LoginModel();
+                $loginController = new LoginController($loginModel);
+                $loginView = new LoginView();
+
+                $action = isset($_GET['action']) ? $_GET['action'] : 'mostrarFormulario';
+
+                // Realizar enrutamiento
+                if ($action === 'mostrarFormulario') {
+                    $loginView->mostrarFormulario();
+                } elseif ($action === 'procesarFormulario') {
+                    $loginController->procesarFormulario();
+                }
+
+                ?>
             </div>
 
             <?php

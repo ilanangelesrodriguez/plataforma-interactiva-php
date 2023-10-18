@@ -413,6 +413,12 @@
     color: #323232;
 }
 
+.login__response-block {
+    color: darkred;
+    font-weight: bold;
+    text-align: center;
+}
+
 
 
 .test__account {

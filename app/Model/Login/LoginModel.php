@@ -1,8 +1,8 @@
 <?php
 
-namespace Model;
+namespace Model\Login;
 
-require_once 'UsuarioModel.php'; // Asegúrate de que la ruta sea correcta
+require_once 'UsuarioModel.php';
 
 class LoginModel
 {
@@ -15,15 +15,16 @@ class LoginModel
 
     private function inicializarUsuarios()
     {
-        // Inicializar usuarios como instancias de la clase UsuarioModel
+
         $this->usuarios['estudiante'] = UsuarioModel::crearUsuario('Ilan', 'clave1');
         $this->usuarios['docente'] = UsuarioModel::crearUsuario('Docente', 'clave2');
         $this->usuarios['rector'] = UsuarioModel::crearUsuario('Rector', 'clave3');
+
     }
 
     public function verificarCredenciales($usuario, $clave)
     {
-        // Verificar credenciales llamando al método en UsuarioModel
+
         $usuarioModel = $this->getUsuario($usuario);
 
         if ($usuarioModel !== null) {
@@ -31,6 +32,7 @@ class LoginModel
         }
 
         return false;
+
     }
 
     public function getUsuario($nombre)

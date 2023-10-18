@@ -13,7 +13,6 @@ class LoginView
             <input required  class="login__input" name="email" placeholder="Usuario" type="text"><br>
             <input required class="login__input" name="password" placeholder="Contraseña" type="password"><br>
 
-
             <button class="login__button" type="submit">Iniciar Sesión</button>
         </form>
 

@@ -1,6 +1,8 @@
 <?php
 
-namespace Model;
+namespace Model\Login\Estado;
+
+use Model\Login\UsuarioModel;
 
 interface EstadoUsuario
 {

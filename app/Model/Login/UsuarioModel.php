@@ -1,6 +1,10 @@
 <?php
 
-namespace Model;
+namespace Model\Login;
+
+use Model\Login\Estado\EstadoUsuario;
+use Model\Login\Estado\UsuarioActivo;
+use Model\Login\Estado\UsuarioBloqueado;
 
 class UsuarioModel
 {
@@ -73,7 +77,7 @@ class UsuarioModel
     {
         $this->setEstado(new UsuarioBloqueado());
         $this->resetIntentosFallidos(); // Resetear intentos fallidos al bloquear al usuario
-        echo "<div class='login__response'>Usuario bloqueado. No se permiten intentos de inicio de sesión.</div>";
+        echo "<div class='login__response'> <div class='login__response-block'>Estado bloqueado.</div> No se permiten intentos de inicio de sesión.</div>";
     }
 
     public function verificarCredenciales($clave)
